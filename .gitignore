@@ -8,3 +8,4 @@
 *.dms
 *.pyc
 *build*
+test/output/*
