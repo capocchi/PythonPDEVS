@@ -1,0 +1,11 @@
+set terminal postscript enhanced colour portrait size 6, 6
+
+set title "Performance of three schedulers"
+set key bottom right
+set yrange [90:120]
+set ylabel "Time taken (%)"
+set xlabel "Number of collisions (%)"
+set out 'seq_poly_zoom.eps'
+plot 'setSchedulerHeapSet_100' using 1:($2/$4*100) title 'HeapSet' w l lw 5, 'setSchedulerMinimalList_100' using 1:($2/$4*100) title 'Minimal List' w l lw 5, 100 w l lw 5 title 'Polymorphic'
+unset yrange
+

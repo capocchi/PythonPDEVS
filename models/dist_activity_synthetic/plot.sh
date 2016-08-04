@@ -1,0 +1,5 @@
+paste dist_activity_synthetic/result_5_True dist_activity_synthetic/result_5_local > /tmp/result_5_True
+paste dist_activity_synthetic/result_5_False dist_activity_synthetic/result_5_local > /tmp/result_5_False
+#paste dist_activity_synthetic/result_50_True dist_activity_synthetic/result_50_local > /tmp/result_50_True
+#paste dist_activity_synthetic/result_50_False dist_activity_synthetic/result_50_local > /tmp/result_50_False
+gnuplot dist_activity_synthetic/plot

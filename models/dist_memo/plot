@@ -1,0 +1,8 @@
+set terminal postscript enhanced colour portrait size 6,6
+set out 'dist_memo.eps'
+set xlabel "Transition function load (ms)"
+set ylabel "Time (s)"
+set key top left
+set yrange [0:110]
+set title "Influence of memoization"
+plot 'result_True_ok' using ($1/54):(($2+$3+$4)/3) w l lw 5 title 'With memoization', 'result_False_ok' using ($1/54):(($2+$3+$4)/3) w l lw 5 title 'Without memoization'

@@ -1,0 +1,8 @@
+# The one with (nearly) no collisions
+set terminal postscript enhanced colour portrait size 6,6
+set out 'seq_msgcopy.eps'
+set key top left
+set title "DEVStone with different message copy methods"
+set xlabel "Models"
+set ylabel "Time (s)"
+plot 'seq_msgcopy/none' title 'No copy', 'seq_msgcopy/custom' title 'Custom copy', 'seq_msgcopy/pickle' title 'Default'

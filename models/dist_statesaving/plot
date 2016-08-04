@@ -1,0 +1,8 @@
+# The one with (nearly) no collisions
+set terminal postscript enhanced colour portrait size 6,6
+set out 'dist_statesaving.eps'
+set key top left
+set title "Different state saving methods"
+set xlabel "Models"
+set ylabel "Time (s)"
+plot 'dist_statesaving/result_deepcopy' title 'Deepcopy', 'dist_statesaving/result_pickleH' title 'Pickle', 'dist_statesaving/result_custom' title 'Custom'

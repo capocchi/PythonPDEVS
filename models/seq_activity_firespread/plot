@@ -1,0 +1,13 @@
+reset
+set terminal postscript enhanced colour portrait size 6,6
+set out 'seq_activity_firespread.eps'
+set title "Simulation time for firespread"
+set key top left
+set xlabel "Total number of models"
+set ylabel "Time (s)"
+#plot 'seq_activity_firespread/setSchedulerActivityHeap' title 'Activity Heap', 'seq_activity_firespread/setSchedulerHeapSet' title 'HeapSet', 'seq_activity_firespread/setSchedulerMinimalList' title 'Minimal List', 'seq_activity_firespread/setSchedulerSortedList' title 'Sorted List'
+plot 'seq_activity_firespread/setSchedulerActivityHeap' title 'Activity Heap' w l, 'seq_activity_firespread/setSchedulerHeapSet' title 'HeapSet' w l, 'seq_activity_firespread/setSchedulerMinimalList' title 'Minimal List' w l, 'seq_activity_firespread/setSchedulerSortedList' title 'Sorted List' w l
+
+set xrange [0:3000]
+set out 'seq_activity_firespread_zoom.eps'
+plot 'seq_activity_firespread/setSchedulerActivityHeap' title 'Activity Heap' w l, 'seq_activity_firespread/setSchedulerHeapSet' title 'HeapSet' w l, 'seq_activity_firespread/setSchedulerMinimalList' title 'Minimal List' w l, 'seq_activity_firespread/setSchedulerSortedList' title 'Sorted List' w l

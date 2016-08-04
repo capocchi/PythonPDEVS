@@ -1,0 +1,14 @@
+set terminal postscript enhanced colour portrait size 6,6
+set key top left
+set ylabel "Time (ms)"
+
+set out 'dist_statesaving_attributes.eps'
+set title "State saving performance for complex states"
+set xlabel "# of attributes"
+plot 'AttributesState_custom' w l lw 5 title 'Custom copy', 'AttributesState_deepcopy' w l lw 5 title 'Deepcopy', 'AttributesState_pickle' w l lw 5 title 'cPickle'
+
+set out 'dist_statesaving_size.eps'
+set title "State saving performance for big states"
+set xlabel "# of floats stored"
+plot 'SizeState_custom' w l lw 5 title 'Custom copy', 'SizeState_deepcopy' w l lw 5 title 'Deepcopy', 'SizeState_pickle' w l lw 5 title 'cPickle'
+

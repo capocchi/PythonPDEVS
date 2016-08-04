@@ -1,0 +1,10 @@
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.tmp
+*-converted-to.pdf
+*.dms
+*.pyc
+*build*

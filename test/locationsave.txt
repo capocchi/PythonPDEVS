@@ -1,0 +1,6 @@
+0 1 Chain.CoupledGenerator.Generator
+1 2 Chain.CoupledProcessor_2.Processor0
+2 2 Chain.CoupledProcessor_2.Processor1
+3 0 Chain.CoupledProcessor_3.Processor0
+4 0 Chain.CoupledProcessor_3.Processor1
+5 0 Chain.CoupledProcessor_3.Processor2

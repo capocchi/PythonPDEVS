@@ -1,0 +1,9 @@
+reset
+set terminal postscript enhanced colour portrait size 6, 6
+set out 'seq_activity_synthetic.eps'
+set key off
+set title "Relative performance of activity heap compared to normal heap"
+set xlabel "Active models"
+set ylabel "Time taken (%)"
+set yrange [75:110]
+plot "< paste seq_activity_synthetic/activityHeap seq_activity_synthetic/heap" using 1:(100*$2/$4), 100 w l lw 5

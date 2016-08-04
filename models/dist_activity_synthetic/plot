@@ -1,0 +1,32 @@
+reset
+set terminal postscript enhanced colour portrait size 6,6
+set key top left
+set out 'dist_activity_synthetic.eps'
+set title "Simple activity relocation vs. no relocation (5 nodes)"
+set xlabel "Microseconds artificial load"
+set ylabel "Speedup"
+plot '/tmp/result_5_True' using (($1)/54):(($6)/(($2+$3+$4)/3)) title 'With activity relocation' w l, '/tmp/result_5_False' using (($1)/54):($6/(($2+$3+$4))) title 'Without activity relocation' w l
+
+set out 'dist_activity_synthetic_load_NO.eps'
+set title 'Synthetic load without relocation'
+set xlabel 'Simulation time'
+set ylabel 'Observed activity (s)'
+plot 'dist_activity_synthetic/activity-log_NO' using 1:($2) title 'Node 1' w l lw 5, '' using 1:($3) title 'Node 2' w l lw 5, '' using 1:($4) title 'Node 3' w l lw 5
+
+set out 'dist_activity_synthetic_load_AT.eps'
+set title 'Synthetic load with activity tracking'
+set xlabel 'Simulation time'
+set ylabel 'Observed activity (s)'
+plot 'dist_activity_synthetic/activity-log_AT' using 1:($2) title 'Node 1' w l lw 5, '' using 1:($3) title 'Node 2' w l lw 5, '' using 1:($4) title 'Node 3' w l lw 5
+
+set out 'dist_activity_synthetic_speedup.eps'
+set title "Speedup with and without activity relocation"
+set xlabel "Computation nodes"
+set ylabel "Speedup"
+plot 'dist_activity_synthetic/result_nodes_True' using 1:(5371/(($2+$3+$4)/3)) title 'Activity relocation' w l lw 5, 'dist_activity_synthetic/result_nodes_False' using 1:(5371/(($2+$3+$4)/3)) title 'No relocation' w l lw 5
+
+set out 'dist_activity_synthetic_50.eps'
+set title "Simple activity relocation vs. no relocation (50 nodes)"
+set xlabel "Microseconds artificial load"
+set ylabel "Speedup"
+plot '/tmp/result_50_True' using (($1)/54):((($6+$7+$8)/3)/(($2+$3+$4)/3)) title 'With activity relocation' w l, '/tmp/result_50_False' using (($1)/54):((($6+$7+$8)/3)/(($2+$3+$4))) title 'Without activity relocation' w l

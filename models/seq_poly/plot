@@ -1,0 +1,27 @@
+reset
+set terminal postscript enhanced colour portrait size 6, 6
+
+set title "Performance of three schedulers"
+set ylabel "Time (s)"
+set xlabel "Number of collisions (models)"
+set key top right
+set out 'seq_poly.eps'
+plot 'seq_poly/setSchedulerPolymorphic' title 'Polymorphic' w l, 'seq_poly/setSchedulerHeapSet' title 'HeapSet' w l, 'seq_poly/setSchedulerMinimalList' title 'Minimal List' w l
+
+set title "Performance of three schedulers"
+set key bottom right
+set yrange [3:6]
+set ylabel "Time (s)"
+set xlabel "Number of collisions (models)"
+set out 'seq_poly_zoom.eps'
+plot 'seq_poly/setSchedulerPolymorphic' title 'Polymorphic' w l, 'seq_poly/setSchedulerHeapSet' title 'HeapSet' w l, 'seq_poly/setSchedulerMinimalList' title 'Minimal List' w l
+unset yrange
+
+set title "Wall clock time required for a fixed simulation time"
+set ylabel "Time (s)"
+set yrange [0:5]
+set xlabel "Simulation time"
+set out 'seq_poly_dynamic.eps'
+#set key out center below
+plot 'seq_poly/setSchedulerPolymorphic_dynamic' title 'Polymorphic' w l, 'seq_poly/setSchedulerHeapSet_dynamic' title 'HeapSet' w l, 'seq_poly/setSchedulerMinimalList_dynamic' title 'Minimal List' w l
+

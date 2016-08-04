@@ -1,0 +1,17 @@
+reset
+set key top left
+set terminal postscript enhanced color portrait size 10,6
+
+set pointsize 1.5
+
+set out 'dist_activity_citylayout_cluster.eps'
+set title 'Citylayout model for different relocators (5 nodes)'
+set xlabel 'Microseconds artificial load'
+set ylabel 'Time (s)'
+plot 'dist_activity_citylayout/cluster_5/results_NO' using (($1)/54):(($2+$3+$4)/3) with linespoint lw 5 title 'No relocation', 'dist_activity_citylayout/cluster_5/results_AT' using (($1)/54):(($2+$3+$4)/3) lw 5 title 'Activity tracking' with linespoint, 'dist_activity_citylayout/cluster_5/results_CA' using (($1)/54):(($2+$3+$4)/3) lw 5 title 'Custom activity tracking' with linespoint, 'dist_activity_citylayout/cluster_5/results_CACR' using (($1)/54):(($2+$3+$4)/3) lw 5 title 'Custom activity Prediction' with linespoint
+
+set out 'dist_activity_citylayout.eps'
+set title 'Citylayout model for different relocators (3 nodes)'
+set xlabel 'Microseconds artificial load'
+set ylabel 'Time (s)'
+plot 'dist_activity_citylayout/local_3/results_NO' using (($1)/54):($2) title 'No relocation' w l, 'dist_activity_citylayout/local_3/results_AT' using (($1)/54):($2) title 'Activity tracking' w l, 'dist_activity_citylayout/local_3/results_CA' using (($1)/54):($2) title 'Custom activity tracking' w l, 'dist_activity_citylayout/local_3/results_CACR' using (($1)/54):($2) title 'Custom activity Prediction' w l

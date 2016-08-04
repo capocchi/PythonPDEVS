@@ -1,0 +1,14 @@
+# The one with (nearly) no collisions
+set terminal postscript enhanced colour portrait size 6,6
+set out 'seq_devstone_nocols.eps'
+set key top left
+set title "DEVStone with no collisions"
+set xlabel "Models"
+set ylabel "Time (s)"
+plot 'seq_devstone/setSchedulerSortedList_True' title 'Sorted List' w l, 'seq_devstone/setSchedulerActivityHeap_True' title 'Activity Heap' w l, 'seq_devstone/setSchedulerHeapSet_True' title 'HeapSet' w l, 'seq_devstone/setSchedulerMinimalList_True' title 'Minimal List' w l, 'seq_devstone/setSchedulerPolymorphic_True' title 'Polymorphic' w l
+
+set out 'seq_devstone_cols.eps'
+set title "DEVStone with collisions"
+set xlabel "Models"
+set ylabel "Time (s)"
+plot 'seq_devstone/setSchedulerSortedList_False' title 'Sorted List' w l, 'seq_devstone/setSchedulerActivityHeap_False' title 'Activity Heap' w l, 'seq_devstone/setSchedulerHeapSet_False' title 'HeapSet' w l, 'seq_devstone/setSchedulerMinimalList_False' title 'Minimal List' w l, 'seq_devstone/setSchedulerPolymorphic_False' title 'Polymorphic' w l
