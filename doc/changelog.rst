@@ -17,5 +17,5 @@
 Changelog
 =========
 
-.. literalinclude:: ../../notes.txt
+.. literalinclude:: ../notes.txt
 
