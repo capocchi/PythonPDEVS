@@ -16,8 +16,8 @@
 
 Colors
 =========
-.. automodule:: colors
+.. automodule:: pypdevs.colors
    :members:
 
-.. autodata:: colors.colors
+.. autodata:: pypdevs.colors.colors
 

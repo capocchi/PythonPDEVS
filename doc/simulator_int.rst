@@ -16,7 +16,7 @@
 
 Simulator
 =========
-.. autofunction:: simulator.loadCheckpoint
-.. autofunction:: simulator.local
-.. autoclass:: simulator.Simulator
+.. autofunction:: pypdevs.simulator.loadCheckpoint
+.. autofunction:: pypdevs.simulator.local
+.. autoclass:: pypdevs.simulator.Simulator
    :members:

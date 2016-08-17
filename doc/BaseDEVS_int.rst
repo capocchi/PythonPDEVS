@@ -17,5 +17,5 @@
 BaseDEVS
 ========
 
-.. autoclass:: DEVS.BaseDEVS
+.. autoclass:: pypdevs.DEVS.BaseDEVS
    :members:

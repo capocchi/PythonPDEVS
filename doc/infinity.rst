@@ -17,4 +17,4 @@
 Infinity object
 ===============
 
-.. autodata:: infinity.INFINITY
+.. autodata:: pypdevs.infinity.INFINITY

@@ -17,6 +17,6 @@
 MPIRedirect class
 =================
 
-.. automodule:: MPIRedirect
+.. automodule:: pypdevs.MPIRedirect
    :members:
    :special-members:

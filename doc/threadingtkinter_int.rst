@@ -17,5 +17,5 @@
 Tk Inter threading
 ==================
 
-.. autoclass:: realtime.threadingTkInter.ThreadingTkInter
+.. autoclass:: pypdevs.realtime.threadingTkInter.ThreadingTkInter
     :members:

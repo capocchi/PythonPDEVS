@@ -17,5 +17,5 @@
 Greedy Allocator
 ================
 
-.. autoclass:: allocators.greedyAllocator.GreedyAllocator
+.. autoclass:: pypdevs.allocators.greedyAllocator.GreedyAllocator
    :members:

@@ -17,5 +17,5 @@
 Utility functions
 =================
 
-.. automodule:: util
+.. automodule:: pypdevs.util
    :members:

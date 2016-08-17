@@ -17,5 +17,5 @@
 Minimal List scheduler
 ======================
 
-.. automodule:: schedulers.schedulerML
+.. automodule:: pypdevs.schedulers.schedulerML
    :members:

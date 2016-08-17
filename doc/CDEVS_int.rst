@@ -17,5 +17,5 @@
 CoupledDEVS
 ===========
 
-.. autoclass:: DEVS.CoupledDEVS
+.. autoclass:: pypdevs.DEVS.CoupledDEVS
    :members:

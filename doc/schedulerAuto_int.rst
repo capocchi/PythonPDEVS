@@ -17,5 +17,5 @@
 Polymorphic scheduler
 =====================
 
-.. automodule:: schedulers.schedulerAuto
+.. automodule:: pypdevs.schedulers.schedulerAuto
    :members:

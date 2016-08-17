@@ -17,5 +17,5 @@
 Sorted List scheduler
 =====================
 
-.. automodule:: schedulers.schedulerSL
+.. automodule:: pypdevs.schedulers.schedulerSL
    :members:

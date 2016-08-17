@@ -17,5 +17,5 @@
 Logger
 ======
 
-.. automodule:: logger
+.. automodule:: pypdevs.logger
    :members:

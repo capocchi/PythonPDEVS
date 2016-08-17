@@ -16,6 +16,6 @@
 
 Minimal Simulation Kernel
 =========================
-.. autofunction:: minimal.directConnect
-.. autoclass:: minimal.Simulator
+.. autofunction:: pypdevs.minimal.directConnect
+.. autoclass:: pypdevs.minimal.Simulator
    :members:

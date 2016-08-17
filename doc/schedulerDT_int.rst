@@ -17,5 +17,5 @@
 'Discrete Time' scheduler
 =========================
 
-.. automodule:: schedulers.schedulerDT
+.. automodule:: pypdevs.schedulers.schedulerDT
    :members:

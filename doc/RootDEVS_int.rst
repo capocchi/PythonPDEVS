@@ -16,5 +16,5 @@
 
 RootDEVS
 =========
-.. autoclass:: DEVS.RootDEVS
+.. autoclass:: pypdevs.DEVS.RootDEVS
    :members:

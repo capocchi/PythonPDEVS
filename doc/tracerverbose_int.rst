@@ -17,5 +17,5 @@
 Verbose Tracer
 ==============
 
-.. autoclass:: tracers.tracerVerbose.TracerVerbose
+.. autoclass:: pypdevs.tracers.tracerVerbose.TracerVerbose
    :members:

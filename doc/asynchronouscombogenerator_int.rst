@@ -17,5 +17,5 @@
 Asynchronous Combo Generator
 ============================
 
-.. autoclass:: realtime.asynchronousComboGenerator.AsynchronousComboGenerator
+.. autoclass:: pypdevs.realtime.asynchronousComboGenerator.AsynchronousComboGenerator
    :members:

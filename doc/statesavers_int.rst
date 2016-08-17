@@ -17,6 +17,6 @@
 State Savers
 ============
 
-.. automodule:: statesavers
+.. automodule:: pypdevs.statesavers
    :members:
    :special-members:

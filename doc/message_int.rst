@@ -16,6 +16,6 @@
 
 Message object
 ==============
-.. automodule:: message
+.. automodule:: pypdevs.message
    :members:
    :special-members:

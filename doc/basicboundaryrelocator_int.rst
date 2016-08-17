@@ -17,5 +17,5 @@
 Basic Boundary Relocator
 ========================
 
-.. automodule:: relocators.basicBoundaryRelocator
+.. automodule:: pypdevs.relocators.basicBoundaryRelocator
    :members:

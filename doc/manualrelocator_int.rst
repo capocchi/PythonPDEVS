@@ -17,5 +17,5 @@
 Manual Relocator
 ================
 
-.. automodule:: relocators.manualRelocator
+.. automodule:: pypdevs.relocators.manualRelocator
    :members:

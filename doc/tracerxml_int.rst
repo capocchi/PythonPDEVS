@@ -17,5 +17,5 @@
 XML Tracer
 ==========
 
-.. autoclass:: tracers.tracerXML.TracerXML
+.. autoclass:: pypdevs.tracers.tracerXML.TracerXML
    :members:

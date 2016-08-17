@@ -17,5 +17,5 @@
 Cell Tracer
 ==============
 
-.. autoclass:: tracers.tracerCell.TracerCell
+.. autoclass:: pypdevs.tracers.tracerCell.TracerCell
    :members:

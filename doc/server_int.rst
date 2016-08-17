@@ -17,5 +17,5 @@
 Server
 ======
 
-.. automodule:: server
+.. automodule:: pypdevs.server
    :members:

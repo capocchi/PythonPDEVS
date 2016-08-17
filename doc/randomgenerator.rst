@@ -17,6 +17,6 @@
 Random Number Generator
 =======================
 
-.. automodule:: randomGenerator
+.. automodule:: pypdevs.randomGenerator
    :members:
    :noindex:

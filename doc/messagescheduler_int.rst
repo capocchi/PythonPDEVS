@@ -16,5 +16,5 @@
 
 MessageScheduler
 ================
-.. automodule:: messageScheduler
+.. automodule:: pypdevs.messageScheduler
    :members:

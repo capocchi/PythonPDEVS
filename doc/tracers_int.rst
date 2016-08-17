@@ -17,5 +17,5 @@
 Tracers
 =======
 
-.. automodule:: tracer
+.. automodule:: pypdevs.tracer
    :members:

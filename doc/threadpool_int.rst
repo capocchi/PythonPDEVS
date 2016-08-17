@@ -17,5 +17,5 @@
 Threadpool
 ==========
 
-.. automodule:: threadpool
+.. automodule:: pypdevs.threadpool
    :members:

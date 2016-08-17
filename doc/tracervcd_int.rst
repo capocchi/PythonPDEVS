@@ -17,5 +17,5 @@
 VCD Tracer
 ==========
 
-.. autoclass:: tracers.tracerVCD.TracerVCD
+.. autoclass:: pypdevs.tracers.tracerVCD.TracerVCD
    :members:

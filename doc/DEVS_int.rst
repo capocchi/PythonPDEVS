@@ -17,7 +17,7 @@
 DEVS models
 ===========
 
-.. automodule:: DEVS
+.. automodule:: pypdevs.DEVS
 
 .. toctree::
    

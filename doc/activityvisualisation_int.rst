@@ -17,5 +17,5 @@
 Activity-aware utility functions
 ================================
 
-.. automodule:: activityVisualisation
+.. automodule:: pypdevs.activityVisualisation
    :members:

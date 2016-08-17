@@ -17,5 +17,5 @@
 Game Loop
 =========
 
-.. autoclass:: realtime.threadingGameLoop.ThreadingGameLoop
+.. autoclass:: pypdevs.realtime.threadingGameLoop.ThreadingGameLoop
     :members:

@@ -17,5 +17,5 @@
 Heapset scheduler
 =================
 
-.. automodule:: schedulers.schedulerHS
+.. automodule:: pypdevs.schedulers.schedulerHS
    :members:

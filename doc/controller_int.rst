@@ -17,5 +17,5 @@
 Controller
 ==========
 
-.. automodule:: controller
+.. automodule:: pypdevs.controller
    :members:

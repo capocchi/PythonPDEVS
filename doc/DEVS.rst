@@ -17,7 +17,7 @@
 DEVS User Interface
 ===================
 
-.. automodule:: DEVS
+.. automodule:: pypdevs.DEVS
 
 .. toctree::
    

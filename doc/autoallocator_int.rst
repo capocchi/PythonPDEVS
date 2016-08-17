@@ -17,5 +17,5 @@
 AutoAllocator
 =============
 
-.. autoclass:: allocators.autoAllocator.AutoAllocator
+.. autoclass:: pypdevs.allocators.autoAllocator.AutoAllocator
    :members:

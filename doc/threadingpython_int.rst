@@ -17,5 +17,5 @@
 Python threading
 ================
 
-.. autoclass:: realtime.threadingPython.ThreadingPython
+.. autoclass:: pypdevs.realtime.threadingPython.ThreadingPython
     :members:

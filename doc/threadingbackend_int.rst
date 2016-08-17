@@ -17,5 +17,5 @@
 Threading Backend
 =================
 
-.. autoclass:: realtime.threadingBackend.ThreadingBackend
+.. autoclass:: pypdevs.realtime.threadingBackend.ThreadingBackend
     :members:

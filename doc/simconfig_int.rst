@@ -17,5 +17,5 @@
 Simulator Configuration
 =======================
 
-.. autoclass:: simconfig.SimulatorConfiguration
+.. autoclass:: pypdevs.simconfig.SimulatorConfiguration
    :members:

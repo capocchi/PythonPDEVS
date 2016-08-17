@@ -16,5 +16,5 @@
 
 AtomicDEVS
 ==========
-.. autoclass:: DEVS.AtomicDEVS
+.. autoclass:: pypdevs.DEVS.AtomicDEVS
    :members:

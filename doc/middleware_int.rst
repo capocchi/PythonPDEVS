@@ -17,5 +17,5 @@
 Middleware Detection
 ====================
 
-.. automodule:: middleware
+.. automodule:: pypdevs.middleware
    :members:

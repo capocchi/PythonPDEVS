@@ -17,5 +17,5 @@
 BaseSimulator: the DEVS kernel
 ==============================
 
-.. autoclass:: basesimulator.BaseSimulator
+.. autoclass:: pypdevs.basesimulator.BaseSimulator
    :members:

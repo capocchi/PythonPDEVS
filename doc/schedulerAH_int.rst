@@ -17,5 +17,5 @@
 Activity Heap scheduler
 =======================
 
-.. automodule:: schedulers.schedulerAH
+.. automodule:: pypdevs.schedulers.schedulerAH
    :members:

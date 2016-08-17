@@ -17,6 +17,6 @@
 Classic DEVS Wrapper
 ====================
 
-.. automodule:: classicDEVSWrapper
+.. automodule:: pypdevs.classicDEVSWrapper
    :members:
    :special-members:

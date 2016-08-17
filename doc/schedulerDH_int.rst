@@ -17,5 +17,5 @@
 Dirty Heap scheduler
 =======================
 
-.. automodule:: schedulers.schedulerDH
+.. automodule:: pypdevs.schedulers.schedulerDH
    :members:

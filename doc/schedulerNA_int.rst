@@ -17,5 +17,5 @@
 No Age scheduler
 ================
 
-.. automodule:: schedulers.schedulerNA
+.. automodule:: pypdevs.schedulers.schedulerNA
    :members:

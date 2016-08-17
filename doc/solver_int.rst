@@ -17,5 +17,5 @@
 DEVS Solver
 ===========
 
-.. automodule:: solver
+.. automodule:: pypdevs.solver
    :members:
