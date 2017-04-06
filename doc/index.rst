@@ -41,5 +41,6 @@ Contents
    Examples (Parallel DEVS) <examples>
    Examples (Dynamic Structure DEVS) <examples_ds>
    Advanced examples <advanced>
+   Complete queueing example (Classic DEVS) <queueing>
    Common problems and solutions <problems>
    Internal documentation <internal>

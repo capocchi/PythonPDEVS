@@ -217,7 +217,7 @@ This would then create the output (or similar, due to concurrency)::
     Got input 3 on model Consumer_3
 
 More complex example
-====================
+--------------------
 
 In the PyPDEVS distribution, a more complex example is provided.
 That example provides a model of two traffic lights, with a policeman who periodically changes the traffic light he is interrupting.
