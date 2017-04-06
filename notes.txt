@@ -1,3 +1,8 @@
+Version 2.4.1
+    * Incremental direct connection only done on change
+    * Direct connection at startup is the non-incremental one for performance
+    * Made minimal simulation kernel more complete
+
 Version 2.4.0
     + Allow realtime interrupts on arbitrary ports
     + Allow realtime simulation to monitor specific ports
