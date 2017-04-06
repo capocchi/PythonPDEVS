@@ -881,13 +881,76 @@ class ExternalWrapper(AtomicDEVS):
         # Fake object is created with a single fake port, so unpack that
         self.f(self.my_input.values()[0])
 
+def directConnect(component_set, listeners):
+    """
+    Perform direct connection on this CoupledDEVS model
+
+    :param component_set: the iterable to direct connect
+    :returns: the direct connected component_set
+    """
+    new_list = []
+    for i in component_set:
+        if isinstance(i, CoupledDEVS):
+            component_set.extend(i.component_set)
+        else:
+            # Found an atomic model
+            new_list.append(i)
+    component_set = new_list
+
+    # All and only all atomic models are now direct children of this model
+    listener_keys = set(listeners.keys())
+    for i in component_set:
+        # Remap the output ports
+        for outport in i.OPorts:
+            # The new contents of the line
+            outport.routing_outline = []
+            worklist = [(p, outport.z_functions.get(p, None)) 
+                        for p in outport.outline]
+            for outline, z in worklist:
+                if outline in listener_keys:
+                    # This port is being listened on, so just add it as a fake model
+                    fake_port = Port(is_input=False,name="Fake")
+                    fake_port.host_DEVS = ExternalWrapper(listeners[outline])
+                    outport.routing_outline.append((fake_port, z))
+                # If it is a coupled model, we must expand this model
+                if isinstance(outline.host_DEVS, CoupledDEVS):
+                    for inline in outline.outline:
+                        # Add it to the current iterating list, so we can just continue
+                        entry = (inline, appendZ(z, outline.z_functions[inline]))
+                        worklist.append(entry)
+                        # If it is a Coupled model, we should just continue 
+                        # expanding it and not add it to the finished line
+                        if not isinstance(inline.host_DEVS, CoupledDEVS):
+                            entry = (inline, appendZ(z, outline.z_functions[inline]))
+                            outport.routing_outline.append(entry)
+                else:
+                    for ol, z in outport.routing_outline:
+                        if ol == outline:
+                            break
+                    else:
+                        # Add to the new line if it isn't already there
+                        # Note that it isn't really mandatory to check for this, 
+                        # it is a lot cleaner to do so.
+                        # This will greatly increase the complexity of the connector though
+                        outport.routing_outline.append((outline, z))
+    return component_set
+
 def directConnectPort(outport, listeners):
+    """
+    Perform direct connection on a single port.
+
+    :param outpurt: the port to reconnect
+    :param listeners: the listeners that exist, potentially on this port
+    :returns: None
+    """
+
     # The new contents of the line
     outport.routing_outline = []
     worklist = [(p, outport.z_functions.get(p, None)) 
                 for p in outport.outline]
+    listener_keys = set(listeners.keys())
     for outline, z in worklist:
-        if outline in listeners.keys():
+        if outline in listener_keys:
             # This port is being listened on, so just add it as a fake model
             fake_port = Port(is_input=False,name="Fake")
             fake_port.host_DEVS = ExternalWrapper(listeners[outline])
@@ -914,36 +977,3 @@ def directConnectPort(outport, listeners):
                 # it is a lot cleaner to do so.
                 # This will greatly increase the complexity of the connector though
                 outport.routing_outline.append((outline, z))
-
-def directConnect(component_set, listeners):
-    """
-    Perform direct connection on this CoupledDEVS model
-
-    :param component_set: the iterable to direct connect
-    :returns: the direct connected component_set
-    """
-    new_list = []
-    # Search for root model
-    root = component_set[0]
-    while root.parent is not None:
-        root = root.parent
-
-    component_set = [root]
-    for i in component_set:
-        if isinstance(i, CoupledDEVS):
-            component_set.extend(i.component_set)
-        else:
-            # Found an atomic model
-            new_list.append(i)
-
-    # Also perform direct connection on all ports of the Coupled DEVS models, should injection ever be wanted
-    for i in component_set:
-        # Remap the output ports
-        for outport in i.OPorts:
-            directConnectPort(outport, listeners)
-
-        if isinstance(i, CoupledDEVS):
-            for inport in i.IPorts:
-                directConnectPort(inport, listeners)
-
-    return new_list

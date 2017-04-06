@@ -19,9 +19,7 @@ While it behaves exactly the same as the normal simulation kernel with default o
 """
 
 from collections import defaultdict
-from pypdevs.DEVS import CoupledDEVS, AtomicDEVS, RootDEVS
 
-"""
 # Uncomment this part to make a completely stand-alone simulation kernel
 class BaseDEVS(object):
     def __init__(self, name):
@@ -99,10 +97,11 @@ class CoupledDEVS(BaseDEVS):
         p2.inline.append(p1)
 
 class RootDEVS(object):
-    def __init__(self, components, scheduler):
+    def __init__(self, components):
+        from schedulers.schedulerAuto import SchedulerAuto as Scheduler
         self.component_set = components
         self.time_next = float('inf')
-        self.scheduler = scheduler(self.component_set, 1e-6, len(self.component_set))
+        self.scheduler = Scheduler(self.component_set, 1e-6, len(self.component_set))
 
 class Port(object):
     def __init__(self, is_input, name=None):
@@ -113,7 +112,6 @@ class Port(object):
 
     def getPortname(self):
         return self.name
-"""
 
 def directConnect(component_set):
     """
@@ -171,14 +169,14 @@ class Simulator(object):
                 m.time_next = (-m.elapsed + m.timeAdvance(), 1)
                 m.model_id = ids
                 ids += 1
-            self.model = RootDEVS(component_set, component_set, None)
+            self.model = RootDEVS(component_set)
         elif isinstance(model, AtomicDEVS):
             for p in model.OPorts:
                 p.routing_outline = []
             model.time_last = (-model.elapsed, 0)
             model.time_next = (model.time_last[0] + model.timeAdvance(), 1)
             model.model_id = 0
-            self.model = RootDEVS([model], [model], None)
+            self.model = RootDEVS([model])
         self.termination_time = float('inf')
 
     def setTerminationTime(self, time):
@@ -193,8 +191,7 @@ class Simulator(object):
         """
         Perform the simulation
         """
-        from schedulers.schedulerAuto import SchedulerAuto
-        scheduler = SchedulerAuto(self.model.component_set, 1e-6, len(self.model.component_set))
+        scheduler = self.model.scheduler
         tn = scheduler.readFirst()
         tt = self.termination_time
         while tt > tn[0]:
