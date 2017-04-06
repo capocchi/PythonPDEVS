@@ -36,7 +36,7 @@ Contents
    How to run <howto>
    Changelog <changelog>
    Interface <interface>
-   Differences from PyDEVS <differences>
+   Performance <performance>
    Examples (Classic DEVS) <examples_classic>
    Examples (Parallel DEVS) <examples>
    Examples (Dynamic Structure DEVS) <examples_ds>
