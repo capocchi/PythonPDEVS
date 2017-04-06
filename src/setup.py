@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(name="PyPDEVS",
-      version="2.4.0",
+      version="2.4.1",
       description="Python Parallel DEVS simulator",
       author="Yentl Van Tendeloo",
       author_email="Yentl.VanTendeloo@uantwerpen.be",
