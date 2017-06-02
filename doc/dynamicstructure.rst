@@ -23,7 +23,12 @@ Dynamic Structure DEVS (DSDEVS) is not actually an 'extension' to DEVS, though i
 
 The way DSDEVS works in PyPDEVS is similar to how it works in adevs. After each transition function, the transitioned model will have its *modelTransition(state)* method called. If it returns *True*, the model will signal its parent model that it requests a structural change. The model will then have its *modelTransition(state)* called too, which is allowed to make structural changes. If it requires changes at a higher level, it should return *True* again, to have the structural change request being propagated upwards. If it returns *False*, no change is requested.
 
-All structural changes should happen in a *coupled model*, as this is kind of model has a structural role. The **only** structural change that is allowed in the *modelTransition(state)* method is the addition or removal of ports. Removing a port will also remove all of its current connections. Adding a port will not yet have an effect on the model itself, as it is not yet connected and requires further structural changes at a higher level. The *modelTransition(state)* method is **NOT** allowed to perform any changes to the model state, only to the state that is provided as an argument (which contains a dictionary).
+Structural changes can happen in both the atomic model and the coupled model, both happening in the *modelTransition(state)* method.
+In *atomic* models, the only structural change allowed is the addition or removal of ports.
+Removing a port will also remove all of its current connections.
+Adding a port will not yet have any effect on the model itself, as it is not yet connected and requires further structural changes at a higher level.
+Note that the *modelTransition(state)* method is **NOT** allowed to perform any changes to the model state, only to the state that is provided as an argument (which contains a dictionary).
+In *coupled* models, all changes to that coupled model, or its children, are allowed: creating and deleting children, connections, and ports.
 
 The *modelTransition* method takes a *state* parameter, which is simply a dictionary that will be passed everytime. If you require modularity, it is possible to use e.g. the fully qualified name of the modelas the key and store another dictionary in here. This functionality can be used to support structural changes that require some kind of memory before deciding whether or not to perform such a change.
 
