@@ -657,10 +657,10 @@ class CoupledDEVS(BaseDEVS):
                                     " '%s' and '%s' belong to the same model" +
                                     " '%s'. " +
                                     " Direct feedback coupling not allowed") % (
-                                    self.getModelFullName(),
-                                    p1.getPortFullName(),
-                                    p2.getPortFullName(),
-                                    p1.host_DEVS.getModelFullName()))
+                                    self.getModelName(),
+                                    p1.getPortName(),
+                                    p2.getPortName(),
+                                    p1.host_DEVS.getModelName()))
             else:
                 p1.outline.append(p2)
                 p2.inline.append(p1)
