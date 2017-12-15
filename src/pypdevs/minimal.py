@@ -161,6 +161,7 @@ class Simulator(object):
 
         :param model: the model to simulate
         """
+        self.original_model = model
         if isinstance(model, CoupledDEVS):
             component_set = directConnect(model.component_set)
             ids = 0
@@ -177,7 +178,7 @@ class Simulator(object):
             model.time_next = (model.time_last[0] + model.timeAdvance(), 1)
             model.model_id = 0
             self.model = RootDEVS([model])
-        self.termination_time = float('inf')
+        self.setTerminationTime(float('inf'))
 
     def setTerminationTime(self, time):
         """
@@ -185,7 +186,15 @@ class Simulator(object):
 
         :param time: simulation time at which simulation should terminate
         """
-        self.termination_time = time
+        self.setTerminationCondition(lambda t, m: time <= t[0])
+
+    def setTerminationCondition(self, function):
+        """
+        Set the termination condition of the simulation.
+
+        :param function: termination condition to execute, taking the current simulated time and the model, returning a boolean (True to terminate)
+        """
+        self.termination_function = function
 
     def simulate(self):
         """
@@ -193,8 +202,7 @@ class Simulator(object):
         """
         scheduler = self.model.scheduler
         tn = scheduler.readFirst()
-        tt = self.termination_time
-        while tt > tn[0]:
+        while not self.termination_function(tn, self.original_model):
             # Generate outputs
             transitioning = defaultdict(int)
             for c in scheduler.getImminent(tn):
