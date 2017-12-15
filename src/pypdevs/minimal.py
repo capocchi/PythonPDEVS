@@ -231,6 +231,7 @@ class Simulator(object):
             # Do reschedules
             scheduler.massReschedule(transitioning)
             tn = scheduler.readFirst()
+        return tn[0]
 
     def __getattr__(self, attr):
         """
